@@ -21,9 +21,6 @@ let template3 = (
         }
     </div>
 )
-// function Component1(){
-//     return <h1>i am Helen</h1>
-// }
 
 // class Component2 extends React.Component{
 //     constructor(props){
@@ -71,6 +68,7 @@ let template3 = (
 //     }
 // }
 
+//组件之间传值
 class Component1 extends React.Component{
     constructor(props){
         super(props)
