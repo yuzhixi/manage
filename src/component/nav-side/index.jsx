@@ -40,6 +40,15 @@ class NavSide extends React.Component{
                             </li>
                         </ul>
                     </li>
+
+                    {/*<li>*/}
+                        {/*<Link to="/user"><i className="fa fa-sitemap"></i>用户<span className="fa arrow"></span></Link>*/}
+                        {/*<ul className="nav nav-second-level collapse in">*/}
+                            {/*<li>*/}
+                                {/*<NavLink activeClassName="active-menu" to="/user">用户管理</NavLink>*/}
+                            {/*</li>*/}
+                        {/*</ul>*/}
+                    {/*</li>*/}
                 </ul>
 
             </div>
