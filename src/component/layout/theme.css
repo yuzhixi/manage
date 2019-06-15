@@ -407,6 +407,13 @@ footer p {
 	padding: 0px;
 }
 
+.top-navbar .nav > li:hover .dropdown-menu{
+	display: block;
+	top: 98%;
+}
+
+
+
 .top-navbar .nav > li > a {
 	position: relative;
 	display: block;
@@ -563,6 +570,10 @@ ul.nav.nav-second-level.collapse.in {
 
 .nav > li > a > i {
 	margin-right: 10px;
+	color: #666;
+}
+
+.nav > li > a > span {
 	color: #666;
 }
 /*----------------------------------------------
