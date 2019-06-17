@@ -9,7 +9,7 @@ class Home extends React.Component{
         return (
             <div id="page-wrapper">
                 <PageTitle title="首页">
-                    <button>click</button>
+                    <button className="btn btn-warning">click</button>
                 </PageTitle>
                 <div className='row'>
                     <div className="col-md-12">

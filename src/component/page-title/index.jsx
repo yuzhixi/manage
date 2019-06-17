@@ -4,6 +4,9 @@ class PageTitle extends React.Component{
     constructor(props){
         super(props)
     }
+    componentWillMount(){
+        document.title = this.props.title + 'HAPPY MMALL'
+    }
     render(){
         return (
             <div className='row'>
