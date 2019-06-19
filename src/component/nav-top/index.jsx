@@ -1,5 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom"
+
 
 class NavTop extends React.Component{
     constructor(props){

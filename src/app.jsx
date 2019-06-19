@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom"
-import { createBrowserHistory } from 'history'
 
 import Home from 'page/home/index.jsx'
 import Login from 'page/login/index.jsx'
