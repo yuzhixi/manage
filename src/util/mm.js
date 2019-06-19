@@ -6,10 +6,14 @@ class MUtil {
             axios.post('/manage/user/login.do',data).then(
                 (res)=>{
                     this.doLogin()
+                    console.log('succedd')
+                    debugger
                     resolve(res)
                 }
             ).catch(
                 (err)=>{
+                    console.error('error')
+
                     reject(err)
                 }
             )
@@ -18,11 +22,10 @@ class MUtil {
 
     getUrlParam(name){
         console.log('window',window.location)
-        let queryString = window.location.search.split('?')[1],
+        let queryString = window.location.search.split('?')[1]||'',
             reg         = new RegExp("(^|&)"+name+"=([^&]*)(&|$)"),
             result      = queryString.match(reg);
             console.log('result', result)
-            debugger
         return result ? decodeURIComponent(result[2]) : null
     }
 

@@ -9,18 +9,28 @@ class Login extends React.Component{
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            redirect: _mm.getUrlParam('redirect')||'/'
         }
+    }
+    componentWillMount(){
+        document.title = "登录--HAPPY MMALL"
     }
     onSubmit(){
         console.log('mm',_mm)
         _mm.login({
             username: this.state.username,
-            password: this.state.password,
-            redirect: _mm.getUrlParam('redirect')||''
+            password: this.state.password
         }).then((res)=>{
-            console.log('res', this.state.redirect)
-            // this.props.history.push(this.state.redirect)
+
+            alert(this.state.redirect)
+            sessionStorage.setItem('userInfo',JSON.stringify({
+                name: 'Helen',
+                age: '25',
+                phone: '18511112222'
+            }))
+            this.props.history.push(this.state.redirect)
+
         })
     }
     onInputChange(e){
@@ -29,6 +39,11 @@ class Login extends React.Component{
         this.setState({
             [inputName]: inputValue
         })
+    }
+    onEnterKeyUp(e){
+        if(e.keyCode == 13){
+            this.onSubmit()
+        }
     }
     render(){
         return (
@@ -52,11 +67,13 @@ class Login extends React.Component{
                                     name="password"
                                     className="form-control"         
                                     placeholder="Password" 
+                                    onKeyUp={(e)=>this.onEnterKeyUp(e)}
                                     onChange={(e) => this.onInputChange(e)}
                                 />
                             </div>
                             <button type="button" 
                                 className="btn btn-primary btn-lg btn-block"
+                                onKeyUp={(e)=>this.onEnterKeyUp(e)}
                                 onClick={(e) => this.onSubmit(e)}
                             >登陆</button>
                         </form>
