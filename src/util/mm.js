@@ -49,6 +49,22 @@ class MUtil {
     doLogin(){
         window.location.href= '/login?redirect='+encodeURIComponent(window.location.pathname)
     }
+
+    statistic(){
+        return new Promise((resolve, reject)=>{
+            axios.post('/manage/statistic/base_count.do').then(
+                (res)=>{
+                    console.log('userData')
+                    resolve(res.data.data)
+                }
+            ).catch(
+                (err)=>{
+                    console.error('error')
+                    reject(err)
+                }
+            )
+        })
+    }
 }
 
 export default MUtil;
