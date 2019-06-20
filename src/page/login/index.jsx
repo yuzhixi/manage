@@ -23,7 +23,6 @@ class Login extends React.Component{
             password: this.state.password
         }).then((res)=>{
 
-            alert(this.state.redirect)
             sessionStorage.setItem('userInfo',JSON.stringify({
                 name: 'Helen',
                 age: '25',

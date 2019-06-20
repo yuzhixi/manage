@@ -7,13 +7,26 @@ class MUtil {
                 (res)=>{
                     this.doLogin()
                     console.log('succedd')
-                    debugger
                     resolve(res)
                 }
             ).catch(
                 (err)=>{
                     console.error('error')
 
+                    reject(err)
+                }
+            )
+        })
+    }
+    logout(){
+        return new Promise((resolve, reject)=>{
+            axios.post('/user/logout.do').then(
+                (res)=>{
+                    resolve(res)
+                }
+            ).catch(
+                (err)=>{
+                    console.error('error')
                     reject(err)
                 }
             )
