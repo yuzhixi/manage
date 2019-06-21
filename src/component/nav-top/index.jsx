@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom"
-import MUtil from 'util/mm';
+import MUtil from 'util/mm.jsx';
 
 const mm = new MUtil()
 

@@ -5,15 +5,24 @@ class MUtil {
         return new Promise((resolve, reject)=>{
             axios.post('/manage/user/login.do',data).then(
                 (res)=>{
-                    this.doLogin()
-                    console.log('succedd')
-                    resolve(res)
+                    // 数据请求成功
+                    if(0 === res.data.status || 1 === res.data.status){
+                        let userData = {
+                            name: 'Helen',
+                            age: '25',
+                            phone: '18511112222'
+                        }
+                        typeof resolve === 'function' && resolve(userData, res.data.msg);
+                    }
+                    // 没有登录状态，强制登录
+                    else if(10 === res.data.status){
+                        this.doLogin();
+                    }
                 }
             ).catch(
-                (err)=>{
-                    console.error('error')
-
-                    reject(err)
+                (error)=>{
+                    debugger
+                    reject(error)
                 }
             )
         })
@@ -49,13 +58,35 @@ class MUtil {
     doLogin(){
         window.location.href= '/login?redirect='+encodeURIComponent(window.location.pathname)
     }
-
+    //首页统计
     statistic(){
         return new Promise((resolve, reject)=>{
             axios.post('/manage/statistic/base_count.do').then(
                 (res)=>{
-                    console.log('userData')
-                    resolve(res.data.data)
+                   // 数据请求成功
+                   if(0 === res.data.status){
+                    
+                        typeof resolve === 'function' && resolve(res.data, res.data.msg);
+                    }
+                }
+            ).catch(
+                (err)=>{
+                    console.error('error')
+                    reject(err)
+                }
+            )
+        })
+    }
+    //获取用户列表
+    getProductList(){
+        return new Promise((resolve, reject)=>{
+            axios.post('/manage/product/list.do').then(
+                (res)=>{
+                   // 数据请求成功
+                   if(0 === res.data.status){
+                    
+                        typeof resolve === 'function' && resolve(res.data, res.data.msg);
+                    }
                 }
             ).catch(
                 (err)=>{

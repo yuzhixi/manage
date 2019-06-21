@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 import axios from 'axios'
-import MUtil from 'util/mm.js'
+import MUtil from 'util/mm.jsx'
 const _mm = new MUtil()
 
 class Login extends React.Component{
@@ -23,11 +23,7 @@ class Login extends React.Component{
             password: this.state.password
         }).then((res)=>{
 
-            sessionStorage.setItem('userInfo',JSON.stringify({
-                name: 'Helen',
-                age: '25',
-                phone: '18511112222'
-            }))
+            sessionStorage.setItem('userInfo',JSON.stringify(res))
             this.props.history.push(this.state.redirect)
 
         })

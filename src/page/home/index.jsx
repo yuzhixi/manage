@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import PageTitle from 'component/page-title/index.jsx'
-import MUtil from 'util/mm.js'
+import MUtil from 'util/mm.jsx'
 import './index.scss'
 
 const _mm = new MUtil()
@@ -22,7 +22,7 @@ class Home extends React.Component{
     loadCount(){
         _mm.statistic().then(res => {
             console.log('res', res)
-            this.setState(res);
+            this.setState(res.data);
         }, errMsg => {
             _mm.errorTips(errMsg);
         });

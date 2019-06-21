@@ -576,6 +576,10 @@ ul.nav.nav-second-level.collapse.in {
 .nav > li > a > span {
 	color: #666;
 }
+
+.page-title {
+	padding: 40px 0
+}
 /*----------------------------------------------
     UI ELEMENTS STYLES     
 ------------------------------------------------*/
