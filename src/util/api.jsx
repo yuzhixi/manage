@@ -77,13 +77,32 @@ class MUtil {
             )
         })
     }
-    //获取用户列表
+    //获取产品列表
     getProductList(){
         return new Promise((resolve, reject)=>{
             axios.post('/manage/product/list.do').then(
                 (res)=>{
                    // 数据请求成功
                    if(0 === res.data.status){
+                    
+                        typeof resolve === 'function' && resolve(res.data, res.data.msg);
+                    }
+                }
+            ).catch(
+                (err)=>{
+                    console.error('error')
+                    reject(err)
+                }
+            )
+        })
+    }
+    //获取用户列表
+    getUserList(data){
+        return new Promise((resolve, reject)=>{
+            axios.post('/manage/user/list.do', data).then(
+                (res)=>{
+                    // 数据请求成功
+                    if(0 === res.data.status){
                     
                         typeof resolve === 'function' && resolve(res.data, res.data.msg);
                     }

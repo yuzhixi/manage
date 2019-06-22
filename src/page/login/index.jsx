@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.scss'
 import axios from 'axios'
-import MUtil from 'util/mm.jsx'
+import MUtil from 'util/api.jsx'
 const _mm = new MUtil()
 
 class Login extends React.Component{

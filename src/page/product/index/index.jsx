@@ -6,7 +6,7 @@
 */
 import React        from 'react';
 import { Link }     from 'react-router-dom';
-import MUtil        from 'util/mm.jsx'
+import MUtil        from 'util/api.jsx'
 
 import PageTitle    from 'component/page-title/index.jsx';
 import TableList    from 'util/table-list.jsx';

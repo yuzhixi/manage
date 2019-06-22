@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
 import PageTitle from 'component/page-title/index.jsx'
-import MUtil from 'util/mm.jsx'
+import MUtil from 'util/api.jsx'
 import './index.scss'
 
 const _mm = new MUtil()
