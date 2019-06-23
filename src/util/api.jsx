@@ -102,9 +102,46 @@ class MUtil {
             axios.post('/manage/user/list.do', data).then(
                 (res)=>{
                     // 数据请求成功
-                    if(0 === res.data.status){
+                    if(0 === res.data.status || 10 === res.data.status){
+                        let data = [
+                            {
+                                id:1244355,
+                                username:"Tommy",
+                                email: '1233333@qq.com',
+                                phone:13411112222,
+                                createTime: '2019-06-23'
+                            },
+                            {
+                                id:1244355,
+                                username:"Tommy",
+                                email: '1233333@qq.com',
+                                phone:13411112222,
+                                createTime: '2019-06-23'
+                            },
+                            {
+                                id:1244355,
+                                username:"Tommy",
+                                email: '1233333@qq.com',
+                                phone:13411112222,
+                                createTime: '2019-06-23'
+                            },
+                            {
+                                id:1244355,
+                                username:"Tommy",
+                                email: '1233333@qq.com',
+                                phone:13411112222,
+                                createTime: '2019-06-23'
+                            },
+                            {
+                                id:1244355,
+                                username:"Tommy",
+                                email: '1233333@qq.com',
+                                phone:13411112222,
+                                createTime: '2019-06-23'
+                            }
+                        ]
                     
-                        typeof resolve === 'function' && resolve(res.data, res.data.msg);
+                        typeof resolve === 'function' && resolve(data, res.data.msg);
                     }
                 }
             ).catch(
