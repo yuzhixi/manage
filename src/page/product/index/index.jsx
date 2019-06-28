@@ -10,6 +10,7 @@ import MUtil        from 'util/api.jsx'
 
 import PageTitle    from 'component/page-title/index.jsx';
 import TableList    from 'util/table-list.jsx';
+import Pagination from 'util/pagination.jsx';
 
 const _mm   = new MUtil();
 
@@ -26,6 +27,7 @@ class ProductList extends React.Component{
     }
     loadProductList(){
         _mm.getProductList(this.state.pageNum).then(res => {
+            console.log('product', res)
             this.setState(res);
         }, errMsg => {
             this.setState({
@@ -37,7 +39,8 @@ class ProductList extends React.Component{
     // 页数发生变化的时候
     onPageNumChange(pageNum){
         this.setState({
-            pageNum : pageNum
+            pageNum : pageNum,
+            total:200
         }, () => {
             this.loadProductList();
         });
@@ -54,15 +57,16 @@ class ProductList extends React.Component{
                 </tr>
             );
         });
+        
         return (
             <div id="page-wrapper">
                 <PageTitle title="商品列表"/>
                 <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
                     {listBody}
                 </TableList>
-                {/* <Pagination current={this.state.pageNum} 
+                <Pagination current={this.state.pageNum} 
                     total={this.state.total} 
-                    onChange={(pageNum) => this.onPageNumChange(pageNum)}/> */}
+                    onChange={(pageNum) => this.onPageNumChange(pageNum)}/>
             </div>
         );
     }
